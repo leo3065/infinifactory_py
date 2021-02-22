@@ -34,12 +34,12 @@ blocks(block_count)[
 
 @dataclasses.dataclass
 class Decal(object):
-    decal_id: DecalID
+    decal_id: int
     face: DecalFace
 
 @dataclasses.dataclass
 class Block(object):
-    block_id: BlockID
+    block_id: int
     position: Tuple[int, int, int]
     facing: BlockFacing
     decals: List[Decal]
