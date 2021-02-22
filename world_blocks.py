@@ -40,7 +40,6 @@ class Decal(object):
 @dataclasses.dataclass
 class Block(object):
     block_id: int
-    position: Tuple[int, int, int]
     facing: BlockFacing
     decals: List[Decal]
 
@@ -48,7 +47,7 @@ class WorldBlocks(object):
     """Class for block strucutes.
 
     """
-    def __init__(self, blocks: List[Block]):
+    def __init__(self, blocks: Dict[Tuple[int,int,int], Block]):
         self.blocks = blocks
 
     @staticmethod
@@ -70,16 +69,14 @@ class WorldBlocks(object):
         )
     
         parsed_blocks = world_block_struct.parse(world_block_data)
-        blocks: List[Block] = []
+        blocks: Dict[Tuple[int,int,int], Block] = {}
         for b in parsed_blocks.blocks:
-            blocks.append(Block(
-                block_id=BlockID(b.block_id),
-                position=(b.x, b.y, b.z),
+            blocks[(b.x, b.y, b.z)] = Block(
+                block_id=b.block_id,
                 facing=BlockFacing(b.facing),
                 decals=[Decal(
-                            decal_id=DecalID(d.decal_id),
+                            decal_id=d.decal_id,
                             face=DecalFace(d.face))
                         for d in b.decals]
-            ))
+            )
         return WorldBlocks(blocks)
-
