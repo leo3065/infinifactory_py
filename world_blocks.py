@@ -44,9 +44,7 @@ class Block(object):
     decals: List[Decal]
 
 class WorldBlocks(object):
-    """Class for block strucutes.
-
-    """
+    """Class for block structures."""
     def __init__(self, blocks: Dict[Tuple[int,int,int], Block]):
         self.blocks = blocks
 
