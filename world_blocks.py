@@ -132,7 +132,6 @@ class WorldBlocks(object):
             if is_in_index_range(pos, key):
                 self.blocks[pos] = value
 
-
     def __delitem__(self, key):
         if not is_valid_index_range(key):
             raise TypeError('The key must be a valid index range.')
@@ -145,3 +144,6 @@ class WorldBlocks(object):
         for pos in poses:
             if is_in_index_range(pos, key):
                 del self.blocks[pos]
+
+    def __contains__(self, key):
+        return key in self.blocks
