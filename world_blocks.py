@@ -146,3 +146,15 @@ class WorldBlocks(object):
 
     def __contains__(self, key):
         return key in self.blocks
+
+    def __iter__(self):
+        return iter(self.blocks)
+
+    def keys(self):
+        return self.blocks.keys()
+
+    def items(self):
+        return self.blocks.items()
+
+    def values(self):
+        return self.blocks.values()
