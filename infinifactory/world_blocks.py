@@ -43,6 +43,7 @@ class Block(object):
     block_id: int
     facing: BlockFacing
     decals: List[Decal] = dataclasses.field(default_factory=list)
+    setting: int = 0
 
 class WorldBlocks(object):
     """Class for block structures."""
@@ -91,7 +92,8 @@ class WorldBlocks(object):
                 decals=[Decal(
                             decal_id=d.decal_id,
                             face=DecalFace(d.face))
-                        for d in b.decals]
+                        for d in b.decals],
+                setting=b.counter_setting
             )
         return WorldBlocks(blocks)
 
@@ -107,7 +109,8 @@ class WorldBlocks(object):
                 'decals': [
                     {'face': d.face, 'decal_id': d.decal_id}
                     for d in b.decals
-                ]
+                ],
+                'counter_setting': b.setting
             })
         return self._world_block_struct.build({'blocks': blocks})
 
