@@ -45,8 +45,7 @@ class Block(object):
     decals: List[Decal] = dataclasses.field(default_factory=list)
 
 class WorldBlocks(object):
-    """Class for block strucutes.
-    """
+    """Class for block structures."""
 
     _world_block_struct = Struct(
                 Const(b'\x03\x00\x00\x00'),
