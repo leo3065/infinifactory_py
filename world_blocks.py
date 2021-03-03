@@ -130,3 +130,15 @@ class WorldBlocks(object):
         
         raise KeyError('Only one position can be assigned at a time.')
 
+    def __delitem__(self, key):
+        if not is_valid_index_range(key):
+            raise TypeError('The key must be a valid index range.')
+
+        if all(isinstance(v, int) for v in key):
+            del self.blocks[key]
+            return
+        
+        poses = list(self.blocks.keys())
+        for pos in poses:
+            if is_in_index_range(pos, key):
+                del self.blocks[pos]
