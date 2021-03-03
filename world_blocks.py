@@ -47,7 +47,7 @@ class Block(object):
 class WorldBlocks(object):
     """Class for block structures."""
 
-    __world_block_struct = Struct(
+    _world_block_struct = Struct(
                 Const(b'\x03\x00\x00\x00'),
                 'blocks' / PrefixedArray(Int32ul, Struct(
                     'block_id' / Int16ul,
@@ -83,7 +83,7 @@ class WorldBlocks(object):
         """
         
     
-        parsed_blocks = __world_block_struct.parse(world_block_data)
+        parsed_blocks = _world_block_struct.parse(world_block_data)
         blocks: Dict[Tuple[int,int,int], Block] = {}
         for b in parsed_blocks.blocks:
             blocks[(b.x, b.y, b.z)] = Block(
@@ -97,6 +97,20 @@ class WorldBlocks(object):
         return WorldBlocks(blocks)
 
     # Magic methods:
+    
+    def __bytes__(self):
+        blocks = []
+        for p, b in self.blocks.items():
+            blocks.append({
+                'block_id': b.block_id,
+                'x': p[0], 'y': p[1], 'z': p[2],
+                'facing': int(b.facing),
+                'decals': [
+                    {'face': d.face, 'decal_id': d.decal_id}
+                    for d in b.decals
+                ]
+            })
+        return self._world_block_struct.build({'blocks': blocks})
 
     def __bool__(self):
         return self.blocks != {}
