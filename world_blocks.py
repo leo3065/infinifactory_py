@@ -97,6 +97,8 @@ class WorldBlocks(object):
             )
         return WorldBlocks(blocks)
 
+    # Magic methods:
+
     def __bool__(self):
         return self.blocks != {}
     
@@ -105,7 +107,7 @@ class WorldBlocks(object):
     
     def __getitem__(self, key):
         if not is_valid_index_range(key):
-            raise TypeError('The key must be valid index range.')
+            raise TypeError('The key must be a valid index range.')
 
         if all(isinstance(v, int) for v in key):
             return self.blocks[key]
@@ -115,3 +117,16 @@ class WorldBlocks(object):
             if is_in_index_range(pos, key):
                 blocks[pos] = block
         return WorldBlocks(blocks)
+    
+    def __setitem__(self, key, value):
+        if not is_valid_index_range(key):
+            raise TypeError('The key must be a valid index range.')
+        if not isinstance(value, Block):
+            raise TypeError('The value must be a block.')
+        
+        if all(isinstance(v, int) for v in key):
+            self.blocks[key] = value
+            return
+        
+        raise KeyError('Only one position can be assigned at a time.')
+
