@@ -3,7 +3,7 @@ import dataclasses
 from infinifactory.face import BlockFacing, DecalFace
 from infinifactory.id import BlockID, DecalID
 
-from typing import List, Tuple
+from typing import List, Tuple, Dict
 
 from construct import Struct, PrefixedArray, Default
 from construct import Byte, Int16ul, Int16sl, Int32ul, Const
