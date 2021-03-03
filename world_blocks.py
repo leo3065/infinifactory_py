@@ -82,8 +82,7 @@ class WorldBlocks(object):
             Parsed WorldBlocks object.
         """
         
-    
-        parsed_blocks = _world_block_struct.parse(world_block_data)
+        parsed_blocks = WorldBlocks._world_block_struct.parse(world_block_data)
         blocks: Dict[Tuple[int,int,int], Block] = {}
         for b in parsed_blocks.blocks:
             blocks[(b.x, b.y, b.z)] = Block(
