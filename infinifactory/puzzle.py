@@ -31,11 +31,11 @@ class Puzzle(object):
             is_advanced: Whether the puzzle is made for the advanced puzzle editor, defaults to True, likely should stay that way
             solved: Whether the puzzle was solved, defaults to False, likely should stay that way
         """
-        self.title = title
-        self.world_blocks = world_blocks
-        self.preview_image = preview_image
-        self.is_advanced = is_advanced
-        self.solved = solved
+        self.title: str = title
+        self.world_blocks: WorldBlocks = world_blocks
+        self.preview_image: Image = preview_image
+        self.is_advanced: bool = is_advanced
+        self.solved: bool = solved
 
     def from_bytes(save_data: bytes):
         """Loads a puzzle from byte data.
