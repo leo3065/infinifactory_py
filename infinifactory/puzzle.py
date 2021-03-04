@@ -3,7 +3,7 @@
 import base64
 import io
 
-from typing import List, Tuple, Optional
+from typing import List, Tuple, Dict, Optional, Any
 from .world_blocks import WorldBlocks
 
 from PIL import Image
@@ -26,21 +26,26 @@ class Puzzle(object):
         title="Untitled Python Puzzle",
         world_blocks=WorldBlocks({}),
         preview_image: Optional[Image.Image]=None,
-        is_advanced=True, solved=False):
+        is_advanced=True, solved=False,
+        # The following argument is keyword only
+        *, extra_params: Optional[Dict[str,Any]]):
         """Constructor.
 
         Args:
             title: Title of the puzzle
             world_blocks: WorldBlock object describing the blocks in the puzzle
-            preview_image: PIL Image 
+            preview_image: PIL Image, or None if missing
             is_advanced: Whether the puzzle is made for the advanced puzzle editor, defaults to True, likely should stay that way
             solved: Whether the puzzle was solved, defaults to False, likely should stay that way
+
+            
         """
         self.title: str = title
         self.world_blocks: WorldBlocks = world_blocks
         self.preview_image: Optional[Image.Image] = preview_image
         self.is_advanced: bool = is_advanced
         self.solved: bool = solved
+        self.extra_params: Dict[str,Any] = extra_params if extra_params is not None else {}
 
     @staticmethod
     def from_str(save_data: str):
@@ -63,7 +68,15 @@ class Puzzle(object):
 
         world_blocks = WorldBlocks.from_bytes(base64.b64decode(save_dict['WorldBlocks']))
 
-        return Puzzle(title, world_blocks, preview_image, is_advanced, solved)
+        handled_keys = [
+            'Title',
+            'Solved',
+            'IsAdvanced',
+            'PreviewImage',
+            'WorldBlocks',
+            ]
+        return Puzzle(title, world_blocks, preview_image, is_advanced, solved,
+            extra_params={k: v for k, v in save_dict.items() if k not in handled_keys})
 
     @staticmethod
     def from_file(fp: str):
@@ -78,7 +91,7 @@ class Puzzle(object):
     def __str__(self):
         """Returns the string representation of this object.
         """
-        save_dict = {}
+        save_dict = self.extra_params.copy()
         save_dict['Title'] = self.title
         save_dict['IsAdvenced'] = self.is_advanced
         save_dict['Solved'] = self.solved
