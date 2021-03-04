@@ -69,3 +69,21 @@ class Puzzle(object):
         """
         with open(fp, "rb") as file:
             return Puzzle.from_bytes(file.read())
+
+    def __str__(self):
+        """Returns the byte representation of this object.
+        """
+        return (
+            "Title = {}\nIsAdvanced = {}\nSolved = {}\n".format(self.title, self.is_advanced, self.solved) + 
+            "WorldBlocks = {}\n".format(base64.b64encode(bytes(self.world_blocks)).decode("utf-8"))
+        )
+
+    def to_file(self, fp: str, allow_overwrite=False):
+        """Writes the puzzle to a file.
+
+        Args:
+            fp: path to the puzzle file.
+            allow_overwrite: whether to overwrite the file if it exists.
+        """
+        with open(fp, "w", encoding="utf-8") as file:
+            file.write(str(self))
