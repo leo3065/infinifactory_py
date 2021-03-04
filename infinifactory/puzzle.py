@@ -38,7 +38,7 @@ class Puzzle(object):
             is_advanced: Whether the puzzle is made for the advanced puzzle editor, defaults to True, likely should stay that way
             solved: Whether the puzzle was solved, defaults to False, likely should stay that way
 
-            
+            extra_params: The extra unhandled parameters in the puzzle
         """
         self.title: str = title
         self.world_blocks: WorldBlocks = world_blocks
