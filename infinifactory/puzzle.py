@@ -1,4 +1,4 @@
-"""Classes for manimulating Infinifacoty save files.
+"""Classes for manipulating Infinifacoty save files.
 """
 import base64
 import io
@@ -13,10 +13,10 @@ class Puzzle(object):
 
     Puzzle keys:
         Title: Title of the puzzle.
-        IsAdvanced: True if the puzzle is advenced, False otherwise. 
+        IsAdvanced: True if the puzzle is advanced, False otherwise. 
         Solved: True if the puzzle is solved, False otherwise. 
         PreviewImage: Base64-encoded preview image (512*512) of the puzzle.
-            May be absent for puzzles that doesn't have preview image.
+            May be absent for puzzles that don't have preview image.
         WorldBlocks: Base64-encoded world block data.
     """
 
@@ -30,7 +30,7 @@ class Puzzle(object):
         save_dict = dict(l.split(b' = ') for l in save_lines)
 
         self.title: str = save_dict[b'Title'].decode('utf-8')
-        self.is_advenced = save_dict[b'IsAdvanced'] == b'True'
+        self.is_advanced = save_dict[b'IsAdvanced'] == b'True'
         self.solved = save_dict[b'Solved'] == b'True'
 
         if b'PreviewImage' in save_dict:
