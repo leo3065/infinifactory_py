@@ -3,7 +3,7 @@
 import base64
 import io
 
-from typing import List, Tuple
+from typing import List, Tuple, Optional
 from .world_blocks import WorldBlocks
 
 from PIL import Image
@@ -21,7 +21,12 @@ class Puzzle(object):
         WorldBlocks: Base64-encoded world block data.
     """
 
-    def __init__(self, title="Untitled Python Puzzle", world_blocks=WorldBlocks({}), preview_image: Image=None, is_advanced=True, solved=False):
+    def __init__(
+        self,
+        title="Untitled Python Puzzle",
+        world_blocks=WorldBlocks({}),
+        preview_image: Optional[Image.Image]=None,
+        is_advanced=True, solved=False):
         """Constructor.
 
         Args:
@@ -33,30 +38,30 @@ class Puzzle(object):
         """
         self.title: str = title
         self.world_blocks: WorldBlocks = world_blocks
-        self.preview_image: Image = preview_image
+        self.preview_image: Optional[Image.Image] = preview_image
         self.is_advanced: bool = is_advanced
         self.solved: bool = solved
 
     @staticmethod
-    def from_bytes(save_data: bytes):
+    def from_str(save_data: str):
         """Loads a puzzle from byte data.
 
         Args:
-            save_data: bytes of the puzzle file.
+            save_data: str of the puzzle file.
         """
         save_lines = save_data.splitlines()
-        save_dict = dict(l.split(b' = ') for l in save_lines)
+        save_dict = dict(l.split(' = ') for l in save_lines)
 
-        title: str = save_dict[b'Title'].decode('utf-8')
-        is_advanced = save_dict[b'IsAdvanced'] == b'True'
-        solved = save_dict[b'Solved'] == b'True'
+        title: str = save_dict['Title']
+        is_advanced = save_dict['IsAdvanced'] == 'True'
+        solved = save_dict['Solved'] == 'True'
 
-        if b'PreviewImage' in save_dict:
-            preview_image = Image.open(io.BytesIO(base64.b64decode(save_dict[b'PreviewImage'])))
+        if 'PreviewImage' in save_dict:
+            preview_image = Image.open(io.BytesIO(base64.b64decode(save_dict['PreviewImage'])))
         else:
             preview_image = None
 
-        world_blocks = WorldBlocks.from_bytes(base64.b64decode(save_dict[b'WorldBlocks']))
+        world_blocks = WorldBlocks.from_bytes(base64.b64decode(save_dict['WorldBlocks']))
 
         return Puzzle(title, world_blocks, preview_image, is_advanced, solved)
 
@@ -67,16 +72,19 @@ class Puzzle(object):
         Args:
             fp: path to a puzzle file.
         """
-        with open(fp, "rb") as file:
-            return Puzzle.from_bytes(file.read())
+        with open(fp, "r") as file:
+            return Puzzle.from_str(file.read())
 
     def __str__(self):
         """Returns the byte representation of this object.
         """
-        return (
-            "Title = {}\nIsAdvanced = {}\nSolved = {}\n".format(self.title, self.is_advanced, self.solved) + 
-            "WorldBlocks = {}\n".format(base64.b64encode(bytes(self.world_blocks)).decode("utf-8"))
-        )
+        save_dict = {}
+        save_dict['Title'] = self.title
+        save_dict['IsAdvenced'] = self.is_advanced
+        save_dict['Solved'] = self.solved
+        save_dict['WorldBlocks'] = base64.b64encode(bytes(self.world_blocks)).decode("utf-8")
+
+        return ''.join(f'{k} = {save_dict[k]}\n' for k in sorted(save_dict.keys()))
 
     def to_file(self, fp: str, allow_overwrite=False):
         """Writes the puzzle to a file.
