@@ -6,6 +6,15 @@ class BlockFacing(IntEnum):
     NegZ = 2
     PosX = 3
 
+    def __str__(self):
+        name_dict = {
+            BlockFacing.PosZ: 'PosZ',
+            BlockFacing.NegX: 'NegX',
+            BlockFacing.NegZ: 'NegZ',
+            BlockFacing.PosX: 'PosX',
+        }
+        return name_dict[self]
+    
     def rotate_ccw(self):
         return BlockFacing((self+1)%4)
 
@@ -19,6 +28,17 @@ class DecalFace(IntEnum):
     Top = 3
     Front = 4
     Back = 5
+
+    def __str__(self):
+        name_dict = {
+            DecalFace.Right: 'Right',
+            DecalFace.Left: 'Left',
+            DecalFace.Bottom: 'Bottom',
+            DecalFace.Top: 'Top',
+            DecalFace.Front: 'Front',
+            DecalFace.Back: 'Back',
+        }
+        return name_dict[self]
     
     def rotate_ccw(self):
         ccw_table = {
