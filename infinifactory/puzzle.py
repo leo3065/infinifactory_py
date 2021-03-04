@@ -58,7 +58,7 @@ class Puzzle(object):
 
         world_blocks = WorldBlocks.from_bytes(base64.b64decode(save_dict[b'WorldBlocks']))
 
-        return Puzzle(title, world_blocks, is_advanced, solved, preview_image)
+        return Puzzle(title, world_blocks, preview_image, is_advanced, solved)
 
     @staticmethod
     def from_file(fp: str):
