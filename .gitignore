@@ -3,3 +3,6 @@ __pycache__
 *.pyc
 .venv
 .vscode
+
+# files for testing
+test_dev
