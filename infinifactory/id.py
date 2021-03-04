@@ -16,7 +16,7 @@ class BlockID(IntEnum):
 
     # Product blocks, mechanical
     AlienDrugContainerEmpty = 110
-    AleinDrugContainerFull = 113
+    AlienDrugContainerFull = 113
     AlienDrugTop = 109
     AlienTerminalBody = 171
     AlienTerminalKeyboard = 94
@@ -232,9 +232,9 @@ class BlockID(IntEnum):
     ResistanceBarracksWallHangarUpper = 67
     ResistanceBarracksWindow = 194
 
-    # Environment, remote astroid fields
-    RemoteAstroidFieldsWall = 72
-    RemoteAstroidFieldsWorklight = 192
+    # Environment, remote asteroid  fields
+    RemoteAsteroidFieldsWall = 72
+    RemoteAsteroidFieldsWorklight = 192
 
     # Environment, overlord bunkers
     OverlordBunkerCatwalkCorner = 215
@@ -321,7 +321,7 @@ class BlockID(IntEnum):
 
             # Product blocks, mechanical
             BlockID.AlienDrugContainerEmpty: 'Alien Drug, Container, Empty',
-            BlockID.AleinDrugContainerFull: 'Alein Drug, Container, Full',
+            BlockID.AlienDrugContainerFull: 'Alien Drug, Container, Full',
             BlockID.AlienDrugTop: 'Alien Drug, Top',
             BlockID.AlienTerminalBody: 'Alien Terminal, Body',
             BlockID.AlienTerminalKeyboard: 'Alien Terminal, Keyboard',
@@ -537,9 +537,9 @@ class BlockID(IntEnum):
             BlockID.ResistanceBarracksWallHangarUpper: 'Resistance Barracks, Wall, Hangar, Upper',
             BlockID.ResistanceBarracksWindow: 'Resistance Barracks, Window',
 
-            # Environment, remote astroid fields
-            BlockID.RemoteAstroidFieldsWall: 'Remote Astroid Fields, Wall',
-            BlockID.RemoteAstroidFieldsWorklight: 'Remote Astroid Fields, Worklight',
+            # Environment, remote asteroid fields
+            BlockID.RemoteAsteroidFieldsWall: 'Remote Asteroid Fields, Wall',
+            BlockID.RemoteAsteroidFieldsWorklight: 'Remote Asteroid Fields, Worklight',
 
             # Environment, overlord bunkers
             BlockID.OverlordBunkerCatwalkCorner: 'Overlord Bunker, Catwalk, Corner',
