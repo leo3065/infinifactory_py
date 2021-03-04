@@ -76,7 +76,7 @@ class Puzzle(object):
             return Puzzle.from_str(file.read())
 
     def __str__(self):
-        """Returns the byte representation of this object.
+        """Returns the string representation of this object.
         """
         save_dict = {}
         save_dict['Title'] = self.title
