@@ -37,6 +37,7 @@ class Puzzle(object):
         self.is_advanced: bool = is_advanced
         self.solved: bool = solved
 
+    @staticmethod
     def from_bytes(save_data: bytes):
         """Loads a puzzle from byte data.
 
@@ -59,6 +60,7 @@ class Puzzle(object):
 
         return Puzzle(title, world_blocks, is_advanced, solved, preview_image)
 
+    @staticmethod
     def from_file(fp: str):
         """Loads a puzzle from a file.
 
