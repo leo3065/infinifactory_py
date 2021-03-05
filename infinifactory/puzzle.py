@@ -93,7 +93,7 @@ class Puzzle(object):
         """
         save_dict = self.extra_params.copy()
         save_dict['Title'] = self.title
-        save_dict['IsAdvenced'] = self.is_advanced
+        save_dict['IsAdvanced'] = self.is_advanced
         save_dict['Solved'] = self.solved
         save_dict['WorldBlocks'] = base64.b64encode(bytes(self.world_blocks)).decode("utf-8")
 
