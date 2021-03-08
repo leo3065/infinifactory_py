@@ -64,7 +64,7 @@ class WorldBlocks(object):
                 ))
             )
 
-    def __init__(self, blocks: Dict[Tuple[int,int,int], Block]):
+    def __init__(self, blocks: Dict[Tuple[int,int,int], Block] = {}):
         """Constructor. 
 
         Arg:

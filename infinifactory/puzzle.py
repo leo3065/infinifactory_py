@@ -66,7 +66,10 @@ class Puzzle(object):
         else:
             preview_image = None
 
-        world_blocks = WorldBlocks.from_bytes(base64.b64decode(save_dict['WorldBlocks']))
+        if 'WorldBlocks' in save_dict:
+            world_blocks = WorldBlocks.from_bytes(base64.b64decode(save_dict['WorldBlocks']))
+        else:
+            world_blocks = WorldBlocks()
 
         handled_keys = [
             'Title',
