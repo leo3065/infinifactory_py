@@ -76,7 +76,7 @@ class DecalFace(IntEnum):
     def rotate_cw(self, angle: int = 1):
         """Rotating the face clockwise. 
         
-        Arg:
+        Args:
             Angle of rotation, where 1 is 90 deg.
         """
         cw_table = {
@@ -93,6 +93,11 @@ class DecalFace(IntEnum):
         return face
     
     def to_absolute(self, dir: BlockFacing):
+        """Converts from block face to absolute facing.
+
+        Args:
+            dir: the block's direction in BlockFacing.
+        """
         return AbsoluteFacing(int(self.rotate_cw(int(dir))))
 
 
@@ -156,9 +161,16 @@ class AbsoluteFacing(IntEnum):
         return face
     
     def to_relative(self, dir: BlockFacing):
+        """Converts from absolute facing to block face.
+
+        Args:
+            dir: the block's direction in BlockFacing.
+        """
         return DecalFace(int(self.rotate_ccw(int(dir))))
     
     def to_coordintate(self):
+        """Converts from absolute facing to direction using coordinate system.
+        """
         name_dict = {
             AbsoluteFacing.PosX: ( 1, 0, 0),
             AbsoluteFacing.NegX: (-1, 0, 0),
