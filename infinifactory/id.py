@@ -163,78 +163,78 @@ class BlockID(IntEnum):
     TreeJusier = 32
 
     # Environment, overlord mothership
-    OverlordMothershipBorderDoubleSided = 236
-    OverlordMothershipBorderSimple = 163
-    OverlordMothershipBorderSingleSided = 161
-    OverlordMothershipCellBorder = 21
-    OverlordMothershipCellScreen = 158
-    OverlordMothershipCellUtilities = 41
-    OverlordMothershipDoor = 136
-    OverlordMothershipStairs = 29
-    OverlordMothershipWallExterior = 58
-    OverlordMothershipWallLower = 29
-    OverlordMothershipWallLowerConveyor = 165
-    OverlordMothershipWallUpper = 183
-    OverlordMothershipWindow = 130
+    OverlordMothershipBorderDoubleSided = 157
+    OverlordMothershipBorderSimple = 185
+    OverlordMothershipBorderSingleSided = 22
+    OverlordMothershipCellBorder = 124
+    OverlordMothershipCellScreen = 125
+    OverlordMothershipCellUtilities = 183
+    OverlordMothershipDoor = 29
+    OverlordMothershipStairs = 41
+    OverlordMothershipWallExterior = 158
+    OverlordMothershipWallLower = 21
+    OverlordMothershipWallLowerConveyor = 161
+    OverlordMothershipWallUpper = 163
+    OverlordMothershipWindow = 236
 
     # Environment, proving grounds
-    ProvingGroundsInputFaceplate = 125
-    ProvingGroundsStairs = 129
-    ProvingGroundsWall = 124
+    ProvingGroundsInputFaceplate = 44
+    ProvingGroundsStairs = 43
+    ProvingGroundsWall = 164
     ProvingGroundsWallConveyor = 27
 
     # Environment, skydock 19
-    Skydock19BorderCorner = 22
-    Skydock19BorderSide = 164
-    Skydock19Platform = 185
-    Skydock19Support = 43
-    Skydock19SupportBottom = 157
-    Skydock19SupportTop = 44
+    Skydock19BorderCorner = 129
+    Skydock19BorderSide = 130
+    Skydock19Platform = 165
+    Skydock19Support = 58
+    Skydock19SupportBottom = 136
+    Skydock19SupportTop = 137
 
     # Environment, resource site 526.81
-    ResourceSite52681Stairs = 147
-    ResourceSite52681Wall = 139
+    ResourceSite52681Stairs = 153
+    ResourceSite52681Wall = 166
 
     # Environment, production zone 2
-    ProductionZone2CatwalkStairs = 167
-    ProductionZone2CatwalkStraight = 150
-    ProductionZone2DrainCorner = 146
-    ProductionZone2DrainStraight = 142
+    ProductionZone2CatwalkStairs = 143
+    ProductionZone2CatwalkStraight = 141
+    ProductionZone2DrainCorner = 145
+    ProductionZone2DrainStraight = 144
     ProductionZone2InputFaceplate = 20
-    ProductionZone2WallLower = 162
-    ProductionZone2WallLowerInputChute = 144
-    ProductionZone2WallLowerNoEdge = 148
-    ProductionZone2WallUpper = 145
-    ProductionZone2WallUpperConveyor = 169
-    ProductionZone2Window = 166
+    ProductionZone2WallLower = 142
+    ProductionZone2WallLowerInputChute = 146
+    ProductionZone2WallLowerNoEdge = 150
+    ProductionZone2WallUpper = 167
+    ProductionZone2WallUpperConveyor = 139
+    ProductionZone2Window = 147
 
     # Environment, resource site 338.11
-    RescourseSite33811Stairs = 141
+    RescourseSite33811Stairs = 26
     RescourseSite33811Wall = 168
 
     # Environment, resource site 902.42
-    RescourseSite90242Burrow = 154
-    RescourseSite90242Stairs = 153
-    RescourseSite90242WallDirt = 143
-    RescourseSite90242WallStructure = 26
-    RescourseSite90242Window = 108
+    RescourseSite90242Burrow = 108
+    RescourseSite90242Stairs = 154
+    RescourseSite90242WallDirt = 169
+    RescourseSite90242WallStructure = 148
+    RescourseSite90242Window = 162
 
     # Environment, resistance barracks
-    ResistanceBarracksBorderBarracks = 345
-    ResistanceBarracksDoor = 70
-    ResistanceBarracksDrainCorner = 68
-    ResistanceBarracksDrainStraight = 77
-    ResistanceBarracksSupport = 76
+    ResistanceBarracksBorderBarracks = 72
+    ResistanceBarracksDoor = 67
+    ResistanceBarracksDrainCorner = 64
+    ResistanceBarracksDrainStraight = 63
+    ResistanceBarracksSupport = 69
     ResistanceBarracksTrack = 78
-    ResistanceBarracksWallBarracks = 69
-    ResistanceBarracksWallHangarLower = 63
-    ResistanceBarracksWallHangarOverhang = 64
-    ResistanceBarracksWallHangarUpper = 67
-    ResistanceBarracksWindow = 194
+    ResistanceBarracksWallBarracks = 76
+    ResistanceBarracksWallHangarLower = 77
+    ResistanceBarracksWallHangarOverhang = 68
+    ResistanceBarracksWallHangarUpper = 70
+    ResistanceBarracksWindow = 345
 
     # Environment, remote asteroid  fields
-    RemoteAsteroidFieldsWall = 72
-    RemoteAsteroidFieldsWorklight = 192
+    RemoteAsteroidFieldsWall = 192
+    RemoteAsteroidFieldsWorklight = 194
 
     # Environment, overlord bunkers
     OverlordBunkerCatwalkCorner = 215
@@ -246,16 +246,16 @@ class BlockID(IntEnum):
     OverlordBunkerDrainCorner = 227
     OverlordBunkerDrainStraight = 224
     OverlordBunkerSupportBase = 223
-    OverlordBunkerSupportHorizontal1 = 220
-    OverlordBunkerSupportHorizontal2 = 228
-    OverlordBunkerSupportVertical = 221
-    OverlordBunkerTableCorner = 207
-    OverlordBunkerTableStraight = 208
-    OverlordBunkerTeleporterAlien = 193
-    OverlordBunkerWallBunkerLower = 222
-    OverlordBunkerWallBunkerUpper = 213
-    OverlordBunkerWallOfficeLower = 225
-    OverlordBunkerWallOfficeUpper = 214
+    OverlordBunkerSupportHorizontal1 = 219
+    OverlordBunkerSupportHorizontal2 = 220
+    OverlordBunkerSupportVertical = 228
+    OverlordBunkerTableCorner = 221
+    OverlordBunkerTableStraight = 207
+    OverlordBunkerTeleporterAlien = 208
+    OverlordBunkerWallBunkerLower = 193
+    OverlordBunkerWallBunkerUpper = 222
+    OverlordBunkerWallOfficeLower = 213
+    OverlordBunkerWallOfficeUpper = 225
 
     # Environment, production zone 1
     ProductionZone1Floor = 233
