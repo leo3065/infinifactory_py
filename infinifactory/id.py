@@ -3,10 +3,10 @@ from enum import IntEnum
 class BlockID(IntEnum):
     # Custom puzzle tools
     Immovable = 24
-    InputPlatfrom = 7
-    InputPlatfromInvisible = 40
+    InputPlatform = 7
+    InputPlatformInvisible = 40
     Invisible = 30
-    InvisibleConveyer = 120
+    InvisibleConveyor = 120
     LowerBound = 60
     OutputPlatform = 6
     OutputPlatformInvisible = 320
@@ -49,20 +49,20 @@ class BlockID(IntEnum):
     ExtrudedMeralHollow = 230
     ExtrudedMetalSolid = 229
     ForkliftMilledMetal = 71
-    ForkliftTruster = 175
+    ForkliftThruster = 175
     LifeSupportBody = 311
     LifeSupportTank = 312
     LifeSupportTop = 313
     LifeSupportValve = 314
     LightBlue = 133
     LightConnector = 176
-    LighOrange = 132
+    LightOrange = 132
     MissileBody = 84
-    MissileTruster = 85
+    MissileThruster = 85
     MissileTop = 83
-    NavagationComputerModule = 321
-    NavagationComputerPower = 322
-    NavagationComputerScreen = 315
+    NavigationComputerModule = 321
+    NavigationComputerPower = 322
+    NavigationComputerScreen = 315
     PlasmaEngineConnector = 317
     PlasmaEngineFuelTank = 341
     PlasmaEngineHousing = 340
@@ -77,7 +77,7 @@ class BlockID(IntEnum):
     SatelliteBody2 = 204
     SatelliteCannonBack = 202
     SatelliteCannonFront = 201
-    SatelliteSolorPanel = 92
+    SatelliteSolarPanel = 92
     SatelliteThruster = 203
     ShipMissleBody = 335
     ShipMissleHead1 = 337
@@ -99,7 +99,7 @@ class BlockID(IntEnum):
     SkipDriveStraight = 328
     SpaceBuoyBody = 298
     SpaceBuoyLight = 299
-    TestZoneBLue = 50
+    TestZoneBlue = 50
     TestZoneNone = 51
     TestZoneRed = 49
     TrainingBlockAncient1 = 96
@@ -114,7 +114,7 @@ class BlockID(IntEnum):
     CritterPackaged = 66
     TreeBranchAngled = 57
     TreeBranchStraight = 56
-    TreeFoilage = 55
+    TreeFoliage = 55
     TreeTrunk = 54
     WhaleEye = 100
     WhaleEyePackaged = 101
@@ -160,7 +160,7 @@ class BlockID(IntEnum):
     Teleporter = 199
     TeleporterPillar = 200
     Transceiver = 151
-    TreeJusier = 32
+    TreeJuicer = 32
 
     # Environment, overlord mothership
     OverlordMothershipBorderDoubleSided = 157
@@ -209,15 +209,15 @@ class BlockID(IntEnum):
     ProductionZone2Window = 147
 
     # Environment, resource site 338.11
-    RescourseSite33811Stairs = 26
-    RescourseSite33811Wall = 168
+    ResourceSite33811Stairs = 26
+    ResourceSite33811Wall = 168
 
     # Environment, resource site 902.42
-    RescourseSite90242Burrow = 108
-    RescourseSite90242Stairs = 154
-    RescourseSite90242WallDirt = 169
-    RescourseSite90242WallStructure = 148
-    RescourseSite90242Window = 162
+    ResourceSite90242Burrow = 108
+    ResourceSite90242Stairs = 154
+    ResourceSite90242WallDirt = 169
+    ResourceSite90242WallStructure = 148
+    ResourceSite90242Window = 162
 
     # Environment, resistance barracks
     ResistanceBarracksBorderBarracks = 72
@@ -276,7 +276,7 @@ class BlockID(IntEnum):
     AtroposStationCatwalkPlatformFacing1 = 255
     AtroposStationCatwalkPlatformFacing2 = 293
     AtroposStationCatwalkStairs = 279
-    AtroposStationCellingTrack = 280
+    AtroposStationCeilingTrack = 280
     AtroposStationElevator = 281
     AtroposStationElevatorFaceplateDouble = 325
     AtroposStationElevatorFaceplateSingle = 324
@@ -286,10 +286,10 @@ class BlockID(IntEnum):
     AtroposStationElevatorTrackFacing1 = 282
     AtroposStationElevatorTrackFacing2 = 294
     AtroposStationElevatorTrackWall = 283
-    AtroposStationHangerDoor = 118
-    AtroposStationHangerDoorBorderHorizontal = 264
-    AtroposStationHangerDoorBorderVertical = 265
-    AtroposStationHangerDoorTeeth = 119
+    AtroposStationHangarDoor = 118
+    AtroposStationHangarDoorBorderHorizontal = 264
+    AtroposStationHangarDoorBorderVertical = 265
+    AtroposStationHangarDoorTeeth = 119
     AtroposStationScaffoldCorner = 288
     AtroposStationScaffoldEdge = 289
     AtroposStationScaffoldInner = 290
@@ -308,10 +308,10 @@ class BlockID(IntEnum):
         table = {
             # Custom puzzle tools
             BlockID.Immovable: 'Immovable',
-            BlockID.InputPlatfrom: 'Input Platfrom',
-            BlockID.InputPlatfromInvisible: 'InputPlatfrom, Invisible',
+            BlockID.InputPlatform: 'Input Platform',
+            BlockID.InputPlatformInvisible: 'Input Platform, Invisible',
             BlockID.Invisible: 'Invisible',
-            BlockID.InvisibleConveyer: 'Invisible, Conveyer',
+            BlockID.InvisibleConveyor: 'Invisible, Conveyor',
             BlockID.LowerBound: 'Lower Bound',
             BlockID.OutputPlatform: 'Output Platform',
             BlockID.OutputPlatformInvisible: 'Output Platform, Invisible',
@@ -354,20 +354,20 @@ class BlockID(IntEnum):
             BlockID.ExtrudedMeralHollow: 'Extruded Meral, Hollow',
             BlockID.ExtrudedMetalSolid: 'Extruded Metal, Solid',
             BlockID.ForkliftMilledMetal: 'Forklift, Milled Metal',
-            BlockID.ForkliftTruster: 'Forklift, Truster',
+            BlockID.ForkliftThruster: 'Forklift, Thruster',
             BlockID.LifeSupportBody: 'Life Support, Body',
             BlockID.LifeSupportTank: 'Life Support, Tank',
             BlockID.LifeSupportTop: 'Life Support, Top',
             BlockID.LifeSupportValve: 'Life Support, Valve',
             BlockID.LightBlue: 'Light, Blue',
             BlockID.LightConnector: 'Light, Connector',
-            BlockID.LighOrange: 'Ligh, Orange',
+            BlockID.LightOrange: 'Light, Orange',
             BlockID.MissileBody: 'Missile, Body',
-            BlockID.MissileTruster: 'Missile, Truster',
+            BlockID.MissileThruster: 'Missile, Thruster',
             BlockID.MissileTop: 'Missile, Top',
-            BlockID.NavagationComputerModule: 'Navagation Computer, Module',
-            BlockID.NavagationComputerPower: 'Navagation Computer, Power',
-            BlockID.NavagationComputerScreen: 'Navagation Computer, Screen',
+            BlockID.NavigationComputerModule: 'Navigation Computer, Module',
+            BlockID.NavigationComputerPower: 'Navigation Computer, Power',
+            BlockID.NavigationComputerScreen: 'Navigation Computer, Screen',
             BlockID.PlasmaEngineConnector: 'Plasma Engine, Connector',
             BlockID.PlasmaEngineFuelTank: 'Plasma Engine, Fuel Tank',
             BlockID.PlasmaEngineHousing: 'Plasma Engine, Housing',
@@ -382,7 +382,7 @@ class BlockID(IntEnum):
             BlockID.SatelliteBody2: 'Satellite, Body, 2',
             BlockID.SatelliteCannonBack: 'Satellite, Cannon, Back',
             BlockID.SatelliteCannonFront: 'Satellite, Cannon, Front',
-            BlockID.SatelliteSolorPanel: 'Satellite, Solor Panel',
+            BlockID.SatelliteSolarPanel: 'Satellite, Solar Panel',
             BlockID.SatelliteThruster: 'Satellite, Thruster',
             BlockID.ShipMissleBody: 'Ship Missle, Body',
             BlockID.ShipMissleHead1: 'Ship Missle, Head 1',
@@ -404,7 +404,7 @@ class BlockID(IntEnum):
             BlockID.SkipDriveStraight: 'Skip Drive, Straight',
             BlockID.SpaceBuoyBody: 'Space Buoy, Body',
             BlockID.SpaceBuoyLight: 'Space Buoy, Light',
-            BlockID.TestZoneBLue: 'Test Zone, BLue',
+            BlockID.TestZoneBlue: 'Test Zone, Blue',
             BlockID.TestZoneNone: 'Test Zone, None',
             BlockID.TestZoneRed: 'Test Zone, Red',
             BlockID.TrainingBlockAncient1: 'Training Block, Ancient, 1',
@@ -419,7 +419,7 @@ class BlockID(IntEnum):
             BlockID.CritterPackaged: 'Critter, Packaged',
             BlockID.TreeBranchAngled: 'Tree, Branch, Angled',
             BlockID.TreeBranchStraight: 'Tree, Branch, Straight',
-            BlockID.TreeFoilage: 'Tree, Foilage',
+            BlockID.TreeFoliage: 'Tree, Foliage',
             BlockID.TreeTrunk: 'Tree, Trunk',
             BlockID.WhaleEye: 'Whale, Eye',
             BlockID.WhaleEyePackaged: 'Whale, Eye, Packaged',
@@ -465,7 +465,7 @@ class BlockID(IntEnum):
             BlockID.Teleporter: 'Teleporter',
             BlockID.TeleporterPillar: 'Teleporter Pillar',
             BlockID.Transceiver: 'Transceiver',
-            BlockID.TreeJusier: 'Tree Jusier',
+            BlockID.TreeJuicer: 'Tree Juicer',
 
             # Environment, overlord mothership
             BlockID.OverlordMothershipBorderDoubleSided: 'Overlord Mothership, Border, Double-Sided',
@@ -507,22 +507,22 @@ class BlockID(IntEnum):
             BlockID.ProductionZone2DrainStraight: 'Production Zone 2, Drain, Straight',
             BlockID.ProductionZone2InputFaceplate: 'Production Zone 2, Input Faceplate',
             BlockID.ProductionZone2WallLower: 'Production Zone 2, Wall, Lower',
-            BlockID.ProductionZone2WallLowerInputChute: 'Production Zone 2, Wall, Lower Input Chute',
+            BlockID.ProductionZone2WallLowerInputChute: 'Production Zone 2, Wall, Lower, Input Chute',
             BlockID.ProductionZone2WallLowerNoEdge: 'Production Zone 2, Wall, Lower, No Edge',
             BlockID.ProductionZone2WallUpper: 'Production Zone 2, Wall, Upper',
             BlockID.ProductionZone2WallUpperConveyor: 'Production Zone 2, Wall, Upper, Conveyor',
             BlockID.ProductionZone2Window: 'Production Zone 2, Window',
 
             # Environment, resource site 338.11
-            BlockID.RescourseSite33811Stairs: 'Rescourse Site 338.11, Stairs',
-            BlockID.RescourseSite33811Wall: 'Rescourse Site 338.11, Wall',
+            BlockID.ResourceSite33811Stairs: 'Resource Site 338.11, Stairs',
+            BlockID.ResourceSite33811Wall: 'Resource Site 338.11, Wall',
 
             # Environment, resource site 902.42
-            BlockID.RescourseSite90242Burrow: 'Rescourse Site 902.42, Burrow',
-            BlockID.RescourseSite90242Stairs: 'Rescourse Site 902.42, Stairs',
-            BlockID.RescourseSite90242WallDirt: 'Rescourse Site 902.42, Wall, Dirt',
-            BlockID.RescourseSite90242WallStructure: 'Rescourse Site 902.42, Wall, Structure',
-            BlockID.RescourseSite90242Window: 'Rescourse Site 902.42, Window',
+            BlockID.ResourceSite90242Burrow: 'Resource Site 902.42, Burrow',
+            BlockID.ResourceSite90242Stairs: 'Resource Site 902.42, Stairs',
+            BlockID.ResourceSite90242WallDirt: 'Resource Site 902.42, Wall, Dirt',
+            BlockID.ResourceSite90242WallStructure: 'Resource Site 902.42, Wall, Structure',
+            BlockID.ResourceSite90242Window: 'Resource Site 902.42, Window',
 
             # Environment, resistance barracks
             BlockID.ResistanceBarracksBorderBarracks: 'Resistance Barracks, Border, Barracks',
@@ -581,7 +581,7 @@ class BlockID(IntEnum):
             BlockID.AtroposStationCatwalkPlatformFacing1: 'Atropos Station, Catwalk, Platform, Facing 1',
             BlockID.AtroposStationCatwalkPlatformFacing2: 'Atropos Station, Catwalk, Platform, Facing 2',
             BlockID.AtroposStationCatwalkStairs: 'Atropos Station, Catwalk, Stairs',
-            BlockID.AtroposStationCellingTrack: 'Atropos Station, Celling Track',
+            BlockID.AtroposStationCeilingTrack: 'Atropos Station, Ceiling Track',
             BlockID.AtroposStationElevator: 'Atropos Station, Elevator',
             BlockID.AtroposStationElevatorFaceplateDouble: 'Atropos Station, Elevator Faceplate, Double',
             BlockID.AtroposStationElevatorFaceplateSingle: 'Atropos Station, Elevator Faceplate, Single',
@@ -591,10 +591,10 @@ class BlockID(IntEnum):
             BlockID.AtroposStationElevatorTrackFacing1: 'Atropos Station, Elevator Track, Facing 1',
             BlockID.AtroposStationElevatorTrackFacing2: 'Atropos Station, Elevator Track, Facing 2',
             BlockID.AtroposStationElevatorTrackWall: 'Atropos Station, Elevator Track, Wall',
-            BlockID.AtroposStationHangerDoor: 'Atropos Station, Hanger Door',
-            BlockID.AtroposStationHangerDoorBorderHorizontal: 'Atropos Station, Hanger Door, Border, Horizontal',
-            BlockID.AtroposStationHangerDoorBorderVertical: 'Atropos Station, Hanger Door, Border, Vertical',
-            BlockID.AtroposStationHangerDoorTeeth: 'Atropos Station, Hanger Door, Teeth',
+            BlockID.AtroposStationHangarDoor: 'Atropos Station, Hangar Door',
+            BlockID.AtroposStationHangarDoorBorderHorizontal: 'Atropos Station, Hangar Door, Border, Horizontal',
+            BlockID.AtroposStationHangarDoorBorderVertical: 'Atropos Station, Hangar Door, Border, Vertical',
+            BlockID.AtroposStationHangarDoorTeeth: 'Atropos Station, Hangar Door, Teeth',
             BlockID.AtroposStationScaffoldCorner: 'Atropos Station, Scaffold, Corner',
             BlockID.AtroposStationScaffoldEdge: 'Atropos Station, Scaffold, Edge',
             BlockID.AtroposStationScaffoldInner: 'Atropos Station, Scaffold, Inner',
@@ -644,8 +644,8 @@ class DecalID(IntEnum):
     ProductionZone1AlienText = 6
 
     # Environment, Atropos station
-    AtroposStationHangerDoorFieldLarge = 17
-    AtroposStationHangerDoorFieldSmall = 23
+    AtroposStationHangarDoorFieldLarge = 17
+    AtroposStationHangarDoorFieldSmall = 23
     AtroposStationLightExterior = 9
     AtroposStationLightHallway = 10
     AtroposStationTextBayA = 31
@@ -655,9 +655,9 @@ class DecalID(IntEnum):
     AtroposStationTextCaution = 15
     AtroposStationTextDanger = 18
     AtroposStationTextDockingStation2 = 14
-    AtroposStationTextHanger12 = 12
-    AtroposStationTextHanger5 = 12
-    AtroposStationTextHanger9 = 13
+    AtroposStationTextHangar12 = 12
+    AtroposStationTextHangar5 = 12
+    AtroposStationTextHangar9 = 13
     AtroposStationTextNotice = 22
 
     def __str__(self):
@@ -693,8 +693,8 @@ class DecalID(IntEnum):
             DecalID.ProductionZone1AlienText: 'Production Zone 1, Alien Text',
 
             # Environment, Atropos station
-            DecalID.AtroposStationHangerDoorFieldLarge: 'Atropos Station, Hanger Door, Field, Large',
-            DecalID.AtroposStationHangerDoorFieldSmall: 'Atropos Station, Hanger Door, Field, Small',
+            DecalID.AtroposStationHangarDoorFieldLarge: 'Atropos Station, Hangar Door, Field, Large',
+            DecalID.AtroposStationHangarDoorFieldSmall: 'Atropos Station, Hangar Door, Field, Small',
             DecalID.AtroposStationLightExterior: 'Atropos Station, Light, Exterior',
             DecalID.AtroposStationLightHallway: 'Atropos Station, Light, Hallway',
             DecalID.AtroposStationTextBayA: 'Atropos Station, Text, Bay A',
@@ -704,9 +704,9 @@ class DecalID(IntEnum):
             DecalID.AtroposStationTextCaution: 'Atropos Station, Text, Caution',
             DecalID.AtroposStationTextDanger: 'Atropos Station, Text, Danger',
             DecalID.AtroposStationTextDockingStation2: 'Atropos Station, Text, Docking Station 2',
-            DecalID.AtroposStationTextHanger12: 'Atropos Station, Text, Hanger 12',
-            DecalID.AtroposStationTextHanger5: 'Atropos Station, Text, Hanger 5',
-            DecalID.AtroposStationTextHanger9: 'Atropos Station, Text, Hanger 9',
+            DecalID.AtroposStationTextHangar12: 'Atropos Station, Text, Hangar 12',
+            DecalID.AtroposStationTextHangar5: 'Atropos Station, Text, Hangar 5',
+            DecalID.AtroposStationTextHangar9: 'Atropos Station, Text, Hangar 9',
             DecalID.AtroposStationTextNotice: 'Atropos Station, Text, Notice',
         }
         return table[self]
