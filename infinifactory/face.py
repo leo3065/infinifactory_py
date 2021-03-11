@@ -168,7 +168,7 @@ class AbsoluteFacing(IntEnum):
         """
         return DecalFace(int(self.rotate_ccw(int(dir))))
     
-    def to_coordintate(self):
+    def to_offset(self):
         """Converts from absolute facing to direction using coordinate system.
         """
         name_dict = {
