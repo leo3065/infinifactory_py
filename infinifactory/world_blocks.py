@@ -35,12 +35,12 @@ blocks(block_count)[
 
 @dataclasses.dataclass
 class Decal(object):
-    decal_id: int
+    decal_id: DecalID
     face: DecalFace
 
 @dataclasses.dataclass
 class Block(object):
-    block_id: int
+    block_id: BlockID
     facing: BlockFacing
     decals: List[Decal] = dataclasses.field(default_factory=list)
     setting: int = 0
@@ -87,10 +87,10 @@ class WorldBlocks(object):
         blocks: Dict[Tuple[int,int,int], Block] = {}
         for b in parsed_blocks.blocks:
             blocks[(b.x, b.y, b.z)] = Block(
-                block_id=b.block_id,
+                block_id=BlockID(b.block_id),
                 facing=BlockFacing(b.facing),
                 decals=[Decal(
-                            decal_id=d.decal_id,
+                            decal_id=DecalID(d.decal_id),
                             face=DecalFace(d.face))
                         for d in b.decals],
                 setting=b.counter_setting
@@ -103,11 +103,11 @@ class WorldBlocks(object):
         blocks = []
         for p, b in self.blocks.items():
             blocks.append({
-                'block_id': b.block_id,
+                'block_id': int(b.block_id),
                 'x': p[0], 'y': p[1], 'z': p[2],
                 'facing': int(b.facing),
                 'decals': [
-                    {'face': d.face, 'decal_id': d.decal_id}
+                    {'face': d.face, 'decal_id': int(d.decal_id)}
                     for d in b.decals
                 ],
                 'counter_setting': b.setting
