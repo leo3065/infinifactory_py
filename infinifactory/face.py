@@ -4,9 +4,18 @@ class BlockFacing(IntEnum):
     """Enums for rotation of block, using the "front" face.
     """
     PosZ = 0
-    NegX = 1
-    NegZ = 2
+    NegX = 2
+    NegZ = 1
     PosX = 3
+
+    def angle(self):
+        angle_dict = {
+            BlockFacing.PosZ: 0,
+            BlockFacing.NegX: 1,
+            BlockFacing.NegZ: 2,
+            BlockFacing.PosX: 3,
+        }
+        return angle_dict[self]
 
     def __str__(self):
         name_dict = {
@@ -23,7 +32,16 @@ class BlockFacing(IntEnum):
         Arg:
             Angle of rotation, where 1 is 90 deg.
         """
-        return BlockFacing((self+angle)%4)
+        ccw_table = {
+            BlockFacing.PosZ: BlockFacing.NegX,
+            BlockFacing.NegX: BlockFacing.NegZ,
+            BlockFacing.NegZ: BlockFacing.PosX,
+            BlockFacing.PosX: BlockFacing.PosZ,
+        }
+        face = self
+        for i in range(angle%4):
+            face = ccw_table[face]
+        return face
 
     def rotate_cw(self, angle: int = 1):
         """Rotating the facing clockwise. 
@@ -31,7 +49,16 @@ class BlockFacing(IntEnum):
         Arg:
             Angle of rotation, where 1 is 90 deg.
         """
-        return BlockFacing((self-angle)%4)
+        ccw_table = {
+            BlockFacing.PosZ: BlockFacing.PosX,
+            BlockFacing.NegX: BlockFacing.PosZ,
+            BlockFacing.NegZ: BlockFacing.NegX,
+            BlockFacing.PosX: BlockFacing.NegZ,
+        }
+        face = self
+        for i in range(angle%4):
+            face = ccw_table[face]
+        return face
 
 class DecalFace(IntEnum):
     """Enums for face for decal, which is in relative (block based) coordinate.
@@ -98,7 +125,7 @@ class DecalFace(IntEnum):
         Args:
             dir: the block's direction in BlockFacing.
         """
-        return AbsoluteFacing(int(self.rotate_cw(int(dir))))
+        return AbsoluteFacing(int(self.rotate_cw(dir.angle())))
 
 
 class AbsoluteFacing(IntEnum):
@@ -166,7 +193,7 @@ class AbsoluteFacing(IntEnum):
         Args:
             dir: the block's direction in BlockFacing.
         """
-        return DecalFace(int(self.rotate_ccw(int(dir))))
+        return DecalFace(int(self.rotate_ccw(dir.angle())))
     
     def to_offset(self):
         """Converts from absolute facing to direction using coordinate system.
