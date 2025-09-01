@@ -25,6 +25,8 @@ class Puzzle(object):
         self,
         title="Untitled Python Puzzle",
         world_blocks=WorldBlocks({}),
+        inputs=[],
+        outputs=[],
         preview_image: Optional[Image.Image]=None,
         is_advanced=True, solved=False,
         # The following argument is keyword only
@@ -34,6 +36,8 @@ class Puzzle(object):
         Args:
             title: Title of the puzzle
             world_blocks: WorldBlock object describing the blocks in the puzzle
+            inputs: List of input blocks for the puzzle
+            outputs: List of output blocks for the puzzle
             preview_image: PIL Image, or None if missing
             is_advanced: Whether the puzzle is made for the advanced puzzle editor, defaults to True, likely should stay that way
             solved: Whether the puzzle was solved, defaults to False, likely should stay that way
@@ -42,6 +46,8 @@ class Puzzle(object):
         """
         self.title: str = title
         self.world_blocks: WorldBlocks = world_blocks
+        self.inputs: List[Any] = inputs
+        self.outputs: List[Any] = outputs
         self.preview_image: Optional[Image.Image] = preview_image
         self.is_advanced: bool = is_advanced
         self.solved: bool = solved
@@ -71,14 +77,24 @@ class Puzzle(object):
         else:
             world_blocks = WorldBlocks()
 
+        inputs = []
+        if 'Inputs' in save_dict:
+            inputs = [WorldBlocks.from_base64_string(b) for b in save_dict['Inputs'].split('#')]
+
+        outputs = []
+        if 'Outputs' in save_dict:
+            outputs = [WorldBlocks.from_base64_string(b) for b in save_dict['Outputs'].split('#')]
+
         handled_keys = [
             'Title',
             'Solved',
             'IsAdvanced',
             'PreviewImage',
             'WorldBlocks',
+            'Inputs',
+            'Outputs',
             ]
-        return Puzzle(title, world_blocks, preview_image, is_advanced, solved,
+        return Puzzle(title, world_blocks, inputs, outputs, preview_image, is_advanced, solved,
             extra_params={k: v for k, v in save_dict.items() if k not in handled_keys})
 
     @staticmethod
@@ -98,7 +114,6 @@ class Puzzle(object):
         save_dict['Title'] = self.title
         save_dict['IsAdvanced'] = self.is_advanced
         save_dict['Solved'] = self.solved
-        save_dict['WorldBlocks'] = base64.b64encode(bytes(self.world_blocks)).decode("utf-8")
 
         return ''.join(f'{k} = {save_dict[k]}\n' for k in sorted(save_dict.keys()))
 
