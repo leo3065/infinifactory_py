@@ -1,4 +1,4 @@
-"""Classes for manipulating Infinifactory save files.
+"""Classes for manipulating Infinifactory puzzle files.
 """
 import base64
 import io
@@ -67,7 +67,7 @@ class Puzzle(object):
             preview_image = None
 
         if 'WorldBlocks' in save_dict:
-            world_blocks = WorldBlocks.from_bytes(base64.b64decode(save_dict['WorldBlocks']))
+            world_blocks = WorldBlocks.from_base64_string(save_dict['WorldBlocks'])
         else:
             world_blocks = WorldBlocks()
 
@@ -109,5 +109,6 @@ class Puzzle(object):
             fp: path to the puzzle file.
             allow_overwrite: whether to overwrite the file if it exists.
         """
-        with open(fp, "w", encoding="utf-8") as file:
+        mode = "w" if allow_overwrite else "x"
+        with open(fp, mode, encoding="utf-8") as file:
             file.write(str(self))

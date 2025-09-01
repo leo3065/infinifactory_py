@@ -1,3 +1,4 @@
+import base64
 import dataclasses
 
 from .face import BlockFacing, DecalFace
@@ -96,6 +97,11 @@ class WorldBlocks(object):
                 setting=b.counter_setting
             )
         return WorldBlocks(blocks)
+
+    @staticmethod
+    def from_base64_string(base64_string: str):
+        world_block_data = base64.b64decode(base64_string)
+        return WorldBlocks.from_bytes(world_block_data)
 
     # Magic methods:
     
